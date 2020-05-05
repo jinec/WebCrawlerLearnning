@@ -1,0 +1,29 @@
+1.如何获取数据
+    1.百度搜索
+    2.政府机构提供一些公开数据
+    3.企业产生的用户数据
+    4.数据平台
+    5.数据咨询服务公司
+    6.爬虫 webspider
+抓取数据流程
+    1.网页的三大特征
+        1.都是通过http或https请求传输数据
+        2.网页都有url地址
+        3.返回的都是html源代码
+    2.抓取流程
+        1.访问网站，获取到源代码
+        2.筛选数据，保存有用的
+        3.如果数据页有url，那么再次请求
+
+
+抓取工具 urllib(稍复杂)  requests模块
+    安装
+        conda安装
+            conda install requests
+        pip
+            pip install requests
+            python3 -m pip install requests
+
+    使用
+        import requests
+        requests.get()

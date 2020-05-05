@@ -1,0 +1,38 @@
+安装
+    pip install beautifulsoup4
+    conda install beautifulsoup4
+引入模块
+    from bs4 import BeautifulSoup
+
+使用
+bs4的四种对象类型
+	1.Tag 标签
+		soup.title
+		soup.head
+		soup.body
+		1.2 标签的属性
+			soup.title.name   取出标签名
+			soup.title.attrs  取出标签的所有属性，返回字典
+	2.NavigableSting对象，获取标签内的文字部分
+		soup.title.string 返回该标签内的文字
+		soup.head.strings 返回该标签内所有子标签的文字，返回的是一个可迭代对象
+		soup.head.text  跟strings相同，但是返回的是文字
+	3.BeautifulSoup对象
+
+	4.comment 跟string差不多，会去掉注释标签
+
+
+遍历节点
+	contents 取标签下的子节点
+	children 取标签下的子节点，需要遍历
+	descendants 所有子孙节点，需要遍历
+	parent 父节点
+	parents 所有的父节点
+
+查找节点
+    find_all(name,attrs,text,limit)  不论取到了多少个值，返回回来的是列表
+        name 标签名
+        attrs 按照属性查找
+        text 按照文本查找
+        limit 限定条数
+    find  同find_all 返回回来的是soup对象，如果知道取到的内容只有一条，推荐使用find，因为find返回的结果可以直接做操作，不需要像find_all还要加[0]
